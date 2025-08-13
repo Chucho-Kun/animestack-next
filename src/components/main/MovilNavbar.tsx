@@ -2,6 +2,7 @@
 import Image from "next/image";
 import { ReactNode, useState } from "react";
 import { FaBars, FaHeart, FaSearch, FaTimes, FaUser } from "react-icons/fa";
+import Logo from "./Logo";
 
 export default function MovilNavbar() {
     const [isOpen, setIsOpen] = useState(false)
@@ -9,13 +10,7 @@ export default function MovilNavbar() {
         <nav className="lg:hidden bg-gray-800 text-white shadow-md relative">
             <div className="flex justify-between items-center">
                 <div className="text-xl font-bold">
-                    <Image
-                        priority={true}
-                        src='/logo.svg'
-                        width={200}
-                        height={70}
-                        alt='logo animestack'
-                    />
+                    <Logo />
                 </div>
                 <button onClick={() => setIsOpen(!isOpen)} className="text-2xl cursor-pointer mr-4">
                     {isOpen ? <FaTimes /> : <FaBars />}
