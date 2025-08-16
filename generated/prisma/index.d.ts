@@ -4982,7 +4982,7 @@ export namespace Prisma {
     studio: string
     date: string
     img: string
-    enable: boolean
+    enable?: boolean
     followers?: UsersCreateNestedManyWithoutFollowingInput
     ranking?: RankingCreateNestedManyWithoutAnimeInput
   }
@@ -4996,7 +4996,7 @@ export namespace Prisma {
     studio: string
     date: string
     img: string
-    enable: boolean
+    enable?: boolean
     followers?: UsersUncheckedCreateNestedManyWithoutFollowingInput
     ranking?: RankingUncheckedCreateNestedManyWithoutAnimeInput
   }
@@ -5037,7 +5037,7 @@ export namespace Prisma {
     studio: string
     date: string
     img: string
-    enable: boolean
+    enable?: boolean
   }
 
   export type AnimesUpdateManyMutationInput = {
@@ -5691,7 +5691,7 @@ export namespace Prisma {
     studio: string
     date: string
     img: string
-    enable: boolean
+    enable?: boolean
     ranking?: RankingCreateNestedManyWithoutAnimeInput
   }
 
@@ -5704,7 +5704,7 @@ export namespace Prisma {
     studio: string
     date: string
     img: string
-    enable: boolean
+    enable?: boolean
     ranking?: RankingUncheckedCreateNestedManyWithoutAnimeInput
   }
 
@@ -5919,7 +5919,7 @@ export namespace Prisma {
     studio: string
     date: string
     img: string
-    enable: boolean
+    enable?: boolean
     followers?: UsersCreateNestedManyWithoutFollowingInput
   }
 
@@ -5932,7 +5932,7 @@ export namespace Prisma {
     studio: string
     date: string
     img: string
-    enable: boolean
+    enable?: boolean
     followers?: UsersUncheckedCreateNestedManyWithoutFollowingInput
   }
 

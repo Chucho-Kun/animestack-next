@@ -29,7 +29,7 @@ model Animes {
   studio    String
   date      String
   img       String
-  enable    Boolean
+  enable    Boolean   @default(true)
   followers Users[]
   ranking   Ranking[]
 }

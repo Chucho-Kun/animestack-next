@@ -20,7 +20,7 @@ export default async function CarruselAnimeMain() {
                             height={297}
                             className="mb-3"
                             alt={`portada anime ${anime.name}`}
-                            src="/covers/1c.png"
+                            src={anime.img}
                         />
 
                         <h2 className="text-sm font-semibold my-2 min-h-[2.5rem] flex text-left">
