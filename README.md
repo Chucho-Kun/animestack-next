@@ -1,36 +1,55 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# FullStack Platform NEXT / REACT / TypeScript
+Platform: Anime ranking from user accounts  - BD PostgreSQL(render.com) + Next JS + React + Node - (Full-Stack CRUD App)
+### List of URL of the platform
+#### Manager:
+#### Add new animes: /animes/add
 
-## Getting Started
+#### User:
+#### /
 
-First, run the development server:
+## Technologies
+Next + React + Typescript + TailwindCSS + Zod + Zustand + Prisma + Cloudinary
+## Developer Notes
+### Deploy on Vercel.app xxxx
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+### Configuring the eslint.config.mjs file to avoid errors that block project builds
+#### eslint.config.mjs
 ```
+import { dirname } from "path";
+import { fileURLToPath } from "url";
+import { FlatCompat } from "@eslint/eslintrc";
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+const compat = new FlatCompat({
+  baseDirectory: __dirname,
+});
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+const eslintConfig = [
+  ...compat.extends("next/core-web-vitals", "next/typescript"),
 
-## Learn More
+  {
+    files: ["app/generated/prisma/**/*.{js,ts,d.ts}"],
+    rules: {
+      "no-unused-expressions": "off",
+      "@typescript-eslint/no-unused-expressions": "off",
+      "no-unused-vars": "off",
+      "@typescript-eslint/no-unused-vars": "off",
+      "@typescript-eslint/no-explicit-any": "off",
+      "@typescript-eslint/no-require-imports": "off",
+    }
 
-To learn more about Next.js, take a look at the following resources:
+  }, {
+    ignores: ["app/generated/prisma/**/*"],
+  }
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+];
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+export default eslintConfig;
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```
+#### Deploying project
+```
+npx prisma generate && next build
+```
