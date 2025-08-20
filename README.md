@@ -10,7 +10,57 @@ Platform: Anime ranking from user accounts  - BD PostgreSQL(render.com) + Next J
 ## Technologies
 Next + React + Typescript + TailwindCSS + Zod + Zustand + Prisma + Cloudinary
 ## Developer Notes
-### Deploy on Vercel.app xxxx
+### Deploy on Vercel.app 
+
+#### src/prisma/schema.prisma
+```
+generator client {
+  provider = "prisma-client-js"
+  output   = "../generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Users {
+  id        Int @id @default(autoincrement())
+  name      String
+  email     String
+  password  String
+  avatar    String
+  country   String
+  enable    Boolean
+  about     String @default("")
+  following Animes[]
+  ranked    Ranking[]
+}
+
+model Animes {
+  id        Int @id @default(autoincrement())
+  name      String
+  nameUrl   String @unique
+  review    String
+  gender    String
+  studio    String
+  date      String
+  img       String
+  enable    Boolean @default(true)
+  followers Users[]
+  ranking   Ranking[]
+}
+
+model Ranking {
+  userId      Int
+  animeId     Int
+  score       Int
+  followedAt  DateTime  @default(now())
+  user        Users @relation(fields: [userId], references: [id])
+  anime       Animes  @relation(fields: [animeId], references: [id])
+  @@id([userId , animeId])
+}
+```
 
 ### Configuring the eslint.config.mjs file to avoid errors that block project builds
 #### eslint.config.mjs
