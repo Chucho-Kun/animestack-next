@@ -1,6 +1,6 @@
 import { friendlyURLs } from "@/src/utils";
 import AnimeCoverUpload from "./AnimeCoverUpload";
-import { addNewAnime } from "@/actions/add-new-animes";
+import { addNewAnime } from "@/actions/anime-actions";
 import { AnimeSchema } from "@/src/types";
 import { toast } from "react-toastify";
 

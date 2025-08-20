@@ -39,7 +39,7 @@ export default function DesktopNavbar() {
                 <button className='flex items-center p-3 justify-between hover:text-amber-300 hover:bg-black transition cursor-pointer'>
                     {userLogin ? (
                         <>
-                            <a href="/" className='font-bold'>Chucho-kun</a>
+                            <a href="/user" className='font-bold'>Chucho-kun</a>
                             <img
                                 src="/avatar/1.png"
                                 alt="Avatar de chucho-kun"
@@ -47,7 +47,7 @@ export default function DesktopNavbar() {
                             />
                         </>
                     ) : (
-                        <a href="/" className='font-bold text-sm m-3'>INICIAR SESIÓN</a>
+                        <a href="/user" className='font-bold text-sm m-3'>INICIAR SESIÓN</a>
                     )}
                 </button>
             </div>

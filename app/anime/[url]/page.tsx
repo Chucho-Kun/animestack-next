@@ -7,6 +7,10 @@ async function getAnimeData(url: string) {
     const data = await prisma.animes.findFirst({
         where:{
             nameUrl: url
+        },
+        include:{
+            followers: true,
+            ranking: true
         }
     })
     if(!data) notFound()

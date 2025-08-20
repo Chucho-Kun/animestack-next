@@ -6,7 +6,6 @@ export default function AnimesLayout({children}: Readonly<{children: ReactNode}>
     <div>
       AnimesLayout
       {children}
-      <ToastifyNotifications />
     </div>
   )
 }

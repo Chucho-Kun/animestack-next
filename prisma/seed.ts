@@ -10,7 +10,7 @@ async function main(){
         })
 
         await prisma.animes.createMany({
-            data:animes
+            data:animes.flat()
         })
 
     } catch (error) {

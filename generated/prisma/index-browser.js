@@ -127,7 +127,8 @@ exports.Prisma.UsersScalarFieldEnum = {
   password: 'password',
   avatar: 'avatar',
   country: 'country',
-  enable: 'enable'
+  enable: 'enable',
+  about: 'about'
 };
 
 exports.Prisma.AnimesScalarFieldEnum = {

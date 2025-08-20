@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import ToastifyNotifications from "@/src/components/main/ToastifyNotifications";
 
 const inter = Inter({
   subsets:["latin"]
@@ -25,6 +26,7 @@ export default function RootLayout({
         className={`${inter.className}`}
       >
         {children}
+        <ToastifyNotifications />
       </body>
     </html>
   );

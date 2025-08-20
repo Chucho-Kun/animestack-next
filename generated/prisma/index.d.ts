@@ -1145,6 +1145,7 @@ export namespace Prisma {
     avatar: string | null
     country: string | null
     enable: boolean | null
+    about: string | null
   }
 
   export type UsersMaxAggregateOutputType = {
@@ -1155,6 +1156,7 @@ export namespace Prisma {
     avatar: string | null
     country: string | null
     enable: boolean | null
+    about: string | null
   }
 
   export type UsersCountAggregateOutputType = {
@@ -1165,6 +1167,7 @@ export namespace Prisma {
     avatar: number
     country: number
     enable: number
+    about: number
     _all: number
   }
 
@@ -1185,6 +1188,7 @@ export namespace Prisma {
     avatar?: true
     country?: true
     enable?: true
+    about?: true
   }
 
   export type UsersMaxAggregateInputType = {
@@ -1195,6 +1199,7 @@ export namespace Prisma {
     avatar?: true
     country?: true
     enable?: true
+    about?: true
   }
 
   export type UsersCountAggregateInputType = {
@@ -1205,6 +1210,7 @@ export namespace Prisma {
     avatar?: true
     country?: true
     enable?: true
+    about?: true
     _all?: true
   }
 
@@ -1302,6 +1308,7 @@ export namespace Prisma {
     avatar: string
     country: string
     enable: boolean
+    about: string
     _count: UsersCountAggregateOutputType | null
     _avg: UsersAvgAggregateOutputType | null
     _sum: UsersSumAggregateOutputType | null
@@ -1331,6 +1338,7 @@ export namespace Prisma {
     avatar?: boolean
     country?: boolean
     enable?: boolean
+    about?: boolean
     following?: boolean | Users$followingArgs<ExtArgs>
     ranked?: boolean | Users$rankedArgs<ExtArgs>
     _count?: boolean | UsersCountOutputTypeDefaultArgs<ExtArgs>
@@ -1344,6 +1352,7 @@ export namespace Prisma {
     avatar?: boolean
     country?: boolean
     enable?: boolean
+    about?: boolean
   }, ExtArgs["result"]["users"]>
 
   export type UsersSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
@@ -1354,6 +1363,7 @@ export namespace Prisma {
     avatar?: boolean
     country?: boolean
     enable?: boolean
+    about?: boolean
   }, ExtArgs["result"]["users"]>
 
   export type UsersSelectScalar = {
@@ -1364,9 +1374,10 @@ export namespace Prisma {
     avatar?: boolean
     country?: boolean
     enable?: boolean
+    about?: boolean
   }
 
-  export type UsersOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "email" | "password" | "avatar" | "country" | "enable", ExtArgs["result"]["users"]>
+  export type UsersOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "email" | "password" | "avatar" | "country" | "enable" | "about", ExtArgs["result"]["users"]>
   export type UsersInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     following?: boolean | Users$followingArgs<ExtArgs>
     ranked?: boolean | Users$rankedArgs<ExtArgs>
@@ -1389,6 +1400,7 @@ export namespace Prisma {
       avatar: string
       country: string
       enable: boolean
+      about: string
     }, ExtArgs["result"]["users"]>
     composites: {}
   }
@@ -1821,6 +1833,7 @@ export namespace Prisma {
     readonly avatar: FieldRef<"Users", 'String'>
     readonly country: FieldRef<"Users", 'String'>
     readonly enable: FieldRef<"Users", 'Boolean'>
+    readonly about: FieldRef<"Users", 'String'>
   }
     
 
@@ -4575,7 +4588,8 @@ export namespace Prisma {
     password: 'password',
     avatar: 'avatar',
     country: 'country',
-    enable: 'enable'
+    enable: 'enable',
+    about: 'about'
   };
 
   export type UsersScalarFieldEnum = (typeof UsersScalarFieldEnum)[keyof typeof UsersScalarFieldEnum]
@@ -4704,6 +4718,7 @@ export namespace Prisma {
     avatar?: StringFilter<"Users"> | string
     country?: StringFilter<"Users"> | string
     enable?: BoolFilter<"Users"> | boolean
+    about?: StringFilter<"Users"> | string
     following?: AnimesListRelationFilter
     ranked?: RankingListRelationFilter
   }
@@ -4716,6 +4731,7 @@ export namespace Prisma {
     avatar?: SortOrder
     country?: SortOrder
     enable?: SortOrder
+    about?: SortOrder
     following?: AnimesOrderByRelationAggregateInput
     ranked?: RankingOrderByRelationAggregateInput
   }
@@ -4731,6 +4747,7 @@ export namespace Prisma {
     avatar?: StringFilter<"Users"> | string
     country?: StringFilter<"Users"> | string
     enable?: BoolFilter<"Users"> | boolean
+    about?: StringFilter<"Users"> | string
     following?: AnimesListRelationFilter
     ranked?: RankingListRelationFilter
   }, "id">
@@ -4743,6 +4760,7 @@ export namespace Prisma {
     avatar?: SortOrder
     country?: SortOrder
     enable?: SortOrder
+    about?: SortOrder
     _count?: UsersCountOrderByAggregateInput
     _avg?: UsersAvgOrderByAggregateInput
     _max?: UsersMaxOrderByAggregateInput
@@ -4761,6 +4779,7 @@ export namespace Prisma {
     avatar?: StringWithAggregatesFilter<"Users"> | string
     country?: StringWithAggregatesFilter<"Users"> | string
     enable?: BoolWithAggregatesFilter<"Users"> | boolean
+    about?: StringWithAggregatesFilter<"Users"> | string
   }
 
   export type AnimesWhereInput = {
@@ -4906,6 +4925,7 @@ export namespace Prisma {
     avatar: string
     country: string
     enable: boolean
+    about?: string
     following?: AnimesCreateNestedManyWithoutFollowersInput
     ranked?: RankingCreateNestedManyWithoutUserInput
   }
@@ -4918,6 +4938,7 @@ export namespace Prisma {
     avatar: string
     country: string
     enable: boolean
+    about?: string
     following?: AnimesUncheckedCreateNestedManyWithoutFollowersInput
     ranked?: RankingUncheckedCreateNestedManyWithoutUserInput
   }
@@ -4929,6 +4950,7 @@ export namespace Prisma {
     avatar?: StringFieldUpdateOperationsInput | string
     country?: StringFieldUpdateOperationsInput | string
     enable?: BoolFieldUpdateOperationsInput | boolean
+    about?: StringFieldUpdateOperationsInput | string
     following?: AnimesUpdateManyWithoutFollowersNestedInput
     ranked?: RankingUpdateManyWithoutUserNestedInput
   }
@@ -4941,6 +4963,7 @@ export namespace Prisma {
     avatar?: StringFieldUpdateOperationsInput | string
     country?: StringFieldUpdateOperationsInput | string
     enable?: BoolFieldUpdateOperationsInput | boolean
+    about?: StringFieldUpdateOperationsInput | string
     following?: AnimesUncheckedUpdateManyWithoutFollowersNestedInput
     ranked?: RankingUncheckedUpdateManyWithoutUserNestedInput
   }
@@ -4953,6 +4976,7 @@ export namespace Prisma {
     avatar: string
     country: string
     enable: boolean
+    about?: string
   }
 
   export type UsersUpdateManyMutationInput = {
@@ -4962,6 +4986,7 @@ export namespace Prisma {
     avatar?: StringFieldUpdateOperationsInput | string
     country?: StringFieldUpdateOperationsInput | string
     enable?: BoolFieldUpdateOperationsInput | boolean
+    about?: StringFieldUpdateOperationsInput | string
   }
 
   export type UsersUncheckedUpdateManyInput = {
@@ -4972,6 +4997,7 @@ export namespace Prisma {
     avatar?: StringFieldUpdateOperationsInput | string
     country?: StringFieldUpdateOperationsInput | string
     enable?: BoolFieldUpdateOperationsInput | boolean
+    about?: StringFieldUpdateOperationsInput | string
   }
 
   export type AnimesCreateInput = {
@@ -5169,6 +5195,7 @@ export namespace Prisma {
     avatar?: SortOrder
     country?: SortOrder
     enable?: SortOrder
+    about?: SortOrder
   }
 
   export type UsersAvgOrderByAggregateInput = {
@@ -5183,6 +5210,7 @@ export namespace Prisma {
     avatar?: SortOrder
     country?: SortOrder
     enable?: SortOrder
+    about?: SortOrder
   }
 
   export type UsersMinOrderByAggregateInput = {
@@ -5193,6 +5221,7 @@ export namespace Prisma {
     avatar?: SortOrder
     country?: SortOrder
     enable?: SortOrder
+    about?: SortOrder
   }
 
   export type UsersSumOrderByAggregateInput = {
@@ -5799,6 +5828,7 @@ export namespace Prisma {
     avatar: string
     country: string
     enable: boolean
+    about?: string
     ranked?: RankingCreateNestedManyWithoutUserInput
   }
 
@@ -5810,6 +5840,7 @@ export namespace Prisma {
     avatar: string
     country: string
     enable: boolean
+    about?: string
     ranked?: RankingUncheckedCreateNestedManyWithoutUserInput
   }
 
@@ -5867,6 +5898,7 @@ export namespace Prisma {
     avatar?: StringFilter<"Users"> | string
     country?: StringFilter<"Users"> | string
     enable?: BoolFilter<"Users"> | boolean
+    about?: StringFilter<"Users"> | string
   }
 
   export type RankingUpsertWithWhereUniqueWithoutAnimeInput = {
@@ -5892,6 +5924,7 @@ export namespace Prisma {
     avatar: string
     country: string
     enable: boolean
+    about?: string
     following?: AnimesCreateNestedManyWithoutFollowersInput
   }
 
@@ -5903,6 +5936,7 @@ export namespace Prisma {
     avatar: string
     country: string
     enable: boolean
+    about?: string
     following?: AnimesUncheckedCreateNestedManyWithoutFollowersInput
   }
 
@@ -5959,6 +5993,7 @@ export namespace Prisma {
     avatar?: StringFieldUpdateOperationsInput | string
     country?: StringFieldUpdateOperationsInput | string
     enable?: BoolFieldUpdateOperationsInput | boolean
+    about?: StringFieldUpdateOperationsInput | string
     following?: AnimesUpdateManyWithoutFollowersNestedInput
   }
 
@@ -5970,6 +6005,7 @@ export namespace Prisma {
     avatar?: StringFieldUpdateOperationsInput | string
     country?: StringFieldUpdateOperationsInput | string
     enable?: BoolFieldUpdateOperationsInput | boolean
+    about?: StringFieldUpdateOperationsInput | string
     following?: AnimesUncheckedUpdateManyWithoutFollowersNestedInput
   }
 
@@ -6083,6 +6119,7 @@ export namespace Prisma {
     avatar?: StringFieldUpdateOperationsInput | string
     country?: StringFieldUpdateOperationsInput | string
     enable?: BoolFieldUpdateOperationsInput | boolean
+    about?: StringFieldUpdateOperationsInput | string
     ranked?: RankingUpdateManyWithoutUserNestedInput
   }
 
@@ -6094,6 +6131,7 @@ export namespace Prisma {
     avatar?: StringFieldUpdateOperationsInput | string
     country?: StringFieldUpdateOperationsInput | string
     enable?: BoolFieldUpdateOperationsInput | boolean
+    about?: StringFieldUpdateOperationsInput | string
     ranked?: RankingUncheckedUpdateManyWithoutUserNestedInput
   }
 
@@ -6105,6 +6143,7 @@ export namespace Prisma {
     avatar?: StringFieldUpdateOperationsInput | string
     country?: StringFieldUpdateOperationsInput | string
     enable?: BoolFieldUpdateOperationsInput | boolean
+    about?: StringFieldUpdateOperationsInput | string
   }
 
   export type RankingUpdateWithoutAnimeInput = {

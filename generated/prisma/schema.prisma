@@ -16,6 +16,7 @@ model Users {
   avatar    String
   country   String
   enable    Boolean
+  about     String    @default("")
   following Animes[]
   ranked    Ranking[]
 }

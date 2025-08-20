@@ -6,5 +6,5 @@ interface Store{
 }
 
 export const useStore = create<Store>(() => ({
-    userLogin: true
+    userLogin: false
 }))
