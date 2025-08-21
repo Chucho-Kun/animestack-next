@@ -1,20 +1,14 @@
 "use client"
-import { Animes, Ranking, Users } from "@/generated/prisma";
 import { useStore } from "../../utils/store";
 import Image from "next/image";
 import { followingAnime } from "@/actions/anime-actions";
 import { toast } from "react-toastify";
 import { useState } from "react";
 import LoaderButton from "./LoaderButton";
+import {AnimeRespType, AnimeTypes, RankingTypes, UserTypes } from "@/src/types";
+  
 
-type AnimeViewProps = {
-    anime: Animes & {
-        followers: Users[]
-        ranking: Ranking[]
-    }
-}
-
-export default function AnimeView({ anime }: AnimeViewProps) {
+export default function AnimeView({ anime }: AnimeRespType ) {
 
     const [ loading , setLoading ] = useState(false)
     const { userLogin } = useStore()

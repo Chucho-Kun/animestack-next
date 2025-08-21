@@ -1,6 +1,21 @@
 "use server"
 import { AnimeSchema, AnimeTypes } from "@/src/types"
 import { prisma } from "../src/libs/prisma"
+import { notFound } from "next/navigation"
+
+export async function getAnimeData(url: string) {
+    const data = await prisma.animes.findFirst({
+        where:{
+            nameUrl: url
+        },
+        include:{
+            followers: true,
+            ranking: true
+        } 
+    })
+    if(!data) notFound()
+    return data
+}
 
 export async function addNewAnime(data : AnimeTypes){
     
